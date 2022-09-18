@@ -2,8 +2,8 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Explore from './pages/Explore'
 import Offers from './pages/Offers'
 import Profile from './pages/Profile' 
-import Signin from './pages/Signin' 
-import Signup from './pages/Signup' 
+import SignIn from './pages/SignIn' 
+import SignUp from './pages/SignUp' 
 import ForgotPassword from './pages/ForgotPassward' 
 import Navbar from './components/Navbar'
 
@@ -16,8 +16,8 @@ function App() {
           <Route path = '/' element={<Explore />} />
           <Route path = '/offers' element={<Offers />} />
           <Route path = '/profiles' element={<Profile />} />
-          <Route path = '/sign-in' element={<Signin />} />
-          <Route path = '/sign-up' element={<Signup />} />
+          <Route path = '/sign-in' element={<SignIn />} />
+          <Route path = '/sign-up' element={<SignUp />} />
           <Route path = '/forgot-passward' element={<ForgotPassword />} />
         </Routes>
         <Navbar />
