@@ -11,7 +11,7 @@ function Category() {
   const [loading, setLoading] = useState(true)
   const [lastFetchedListing, setLastFetchedListing] = useState(null)
   const params = useParams()
-  
+
   useEffect(() => {
     const fetchListings = async () => {
       try {
@@ -112,13 +112,13 @@ function Category() {
             </ul>
           </main>
 
-          {/* <br />
+          <br />
           <br />
           {lastFetchedListing && (
             <p className='loadMore' onClick={onFetchMoreListings}>
               Load More
             </p>
-          )} */}
+          )}
         </>
       ) : (
         <p>No listings for {params.categoryName}</p>
