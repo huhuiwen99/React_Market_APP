@@ -8,7 +8,6 @@ function ForgotPassword() {
   const [email, setEmail] = useState('')
 
   const onChange = (e) => setEmail(e.target.value)
-
   const onSubmit = async (e) => {
     e.preventDefault()
     try {
@@ -28,16 +27,10 @@ function ForgotPassword() {
 
       <main>
         <form onSubmit={onSubmit}>
-          <input
-            type='email'
-            className='emailInput'
-            placeholder='Email'
-            id='email'
-            value={email}
-            onChange={onChange}
-          />
+          <input type='email' className='emailInput' placeholder='Email'
+            id='email' value={email} onChange={onChange}/>
           <Link className='forgotPasswordLink' to='/sign-in'>
-            Sign In
+            Return to Sign In
           </Link>
 
           <div className='signInBar'>

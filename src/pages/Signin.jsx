@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { toast } from 'react-toastify'
 import { Link, useNavigate } from 'react-router-dom'
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
-// import OAuth from '../components/OAuth'
+import OAuth from '../components/OAuth'
 import { ReactComponent as ArrowRightIcon } from '../assets/svg/keyboardArrowRightIcon.svg'
 import visibilityIcon from '../assets/svg/visibilityIcon.svg'
 
@@ -57,7 +57,6 @@ function SignIn() {
             value={email}
             onChange={onChange}
           />
-
           <div className='passwordInputDiv'>
             <input
               type={showPassword ? 'text' : 'password'}
@@ -67,7 +66,6 @@ function SignIn() {
               value={password}
               onChange={onChange}
             />
-
             <img
               src={visibilityIcon}
               alt='show password'
@@ -75,11 +73,9 @@ function SignIn() {
               onClick={() => setShowPassword((prevState) => !prevState)}
             />
           </div>
-
           <Link to='/forgot-password' className='forgotPasswordLink'>
             Forgot Password
           </Link>
-
           <div className='signInBar'>
             <p className='signInText'>Sign In</p>
             <button className='signInButton'>
@@ -87,13 +83,10 @@ function SignIn() {
             </button>
           </div>
         </form>
-
-        {/* <OAuth /> */}
-
-        
         <Link to='/sign-up' className='registerLink'>
           First time user?  Click to sign up! 
         </Link>
+        <OAuth />  
       </div>
     </>
   )
