@@ -29,23 +29,19 @@ function SignUp() {
 
   const onSubmit = async (e) => {
     e.preventDefault()
-
     try {
       const auth = getAuth()
-
       const userCredential = await createUserWithEmailAndPassword(auth, email, password)
       const user = userCredential.user
       updateProfile(auth.currentUser, {
         displayName: name
       })
 
-      const formDataCopy = {...formData}
+      const formDataCopy = { ...formData }
       delete formDataCopy.password
       formDataCopy.timestamp = serverTimestamp()
 
       await setDoc(doc(db, 'users', user.uid), formDataCopy)
-
-
       navigate('/')
     } catch (error) {
       toast.error('Something went wrong with registration')
@@ -100,7 +96,7 @@ function SignUp() {
           </Link>
 
           <div className='signInBar'>
-            <p className='signInText'>Sign In</p>
+            <p className='signInText'>Sign Up</p>
             <button className='signInButton'>
               <ArrowRightIcon fill='#ffffff' width='34px' height='34px' />
             </button>
@@ -109,9 +105,8 @@ function SignUp() {
 
         {/* <OAuth /> */}
 
-        
         <Link to='/sign-in' className='registerLink'>
-          Already has an account? Sign in instead.
+          Already have an account? Sign in instead.
         </Link>
       </div>
     </>

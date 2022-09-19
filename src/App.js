@@ -25,7 +25,7 @@ function App() {
       </Router>
       <ToastContainer />
     </>
-  );
+  )
 }
 
 export default App;
